@@ -4,13 +4,20 @@ namespace Prime.Service
 {
     public class PrimeService
     {
-        public bool isPrime(int candiadate)
+        public bool IsPrime(int candiadate)
         {
             if (candiadate < 2)
             {
                 return false;
             }
-            throw new NotImplementedException("Not Implemented.");
+
+            double root = Math.Sqrt(candiadate);
+            for(int i = 2; i <= root; ++i)
+            {
+                if ((candiadate  % i) == 0)
+                    return false;
+            }
+            return true;
         }
     }
 }
