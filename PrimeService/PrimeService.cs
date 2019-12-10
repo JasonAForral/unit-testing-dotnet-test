@@ -6,7 +6,7 @@ namespace Prime.Service
     {
         public bool isPrime(int candiadate)
         {
-            if (candiadate == 1)
+            if (candiadate < 2)
             {
                 return false;
             }

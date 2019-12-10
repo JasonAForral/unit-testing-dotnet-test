@@ -12,12 +12,15 @@ namespace Prime.UnitTests.Service
             _primeService = new PrimeService();
         }
 
-        [Fact]
-        public void PrimeService_IsPrimeShould_ReturnFalse()
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        [InlineData(1)]
+        public void IsPrime_ValuesLessThan2_ReturnFalse(int value)
         {
-            var result = _primeService.isPrime(1);
+            var result = _primeService.isPrime(candiadate: value);
 
-            Assert.False(result, "1 should not be prime");
+            Assert.False(result, "{$value} should not be prime");
         }
     }
 }
